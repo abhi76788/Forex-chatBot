@@ -5,7 +5,7 @@ Chat bot for all forex related query
 
 A basic working prototype is available at:
 
-`/home/runner/work/Forex-chatBot/Forex-chatBot/prototype/index.html`
+`prototype/index.html`
 
 ### Run locally
 

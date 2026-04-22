@@ -51,20 +51,20 @@ const fallbackReply =
 function getReply(question) {
   const text = question.toLowerCase();
   let bestMatch = null;
-  let score = 0;
+  let bestScore = 0;
 
   for (const intent of knowledgeBase) {
-    let current = 0;
+    let matchCount = 0;
     for (const key of intent.keys) {
-      if (text.includes(key)) current += 1;
+      if (text.includes(key)) matchCount += 1;
     }
-    if (current > score) {
-      score = current;
+    if (matchCount > bestScore) {
+      bestScore = matchCount;
       bestMatch = intent.answer;
     }
   }
 
-  return score > 0 ? bestMatch : fallbackReply;
+  return bestScore > 0 ? bestMatch : fallbackReply;
 }
 
 function appendMessage(text, sender) {
